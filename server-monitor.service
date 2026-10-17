@@ -1,0 +1,10 @@
+[Unit]
+Description=Send server resource report to Telegram
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/server-monitor.env
+ExecStart=/usr/bin/python3 /opt/server-monitor/monitor.py
+Nice=10
