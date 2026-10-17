@@ -4,6 +4,9 @@
 
 # ربات تلگرام مانیتورینگ سرور
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+![Python 3.6+](https://img.shields.io/badge/python-3.6%2B-blue.svg)
+
 یک ابزار سبک برای مانیتورینگ سرور لینوکس که هر ۱۵ دقیقه گزارش منابع سرور را فقط برای **یک** کاربر تلگرام ارسال می‌کند.
 
 بدون نیاز به نصب پکیج، بدون سرویس همیشه‌روشن و بدون دیتابیس: فقط یک اسکریپت پایتون با کتابخانه‌های داخلی که توسط `systemd timer` اجرا می‌شود. هر بار چند ثانیه اجرا می‌شود، گزارش را می‌فرستد و بسته می‌شود؛ پس بین اجراها هیچ رمی مصرف نمی‌کند.
@@ -131,7 +134,8 @@ sudo systemctl disable --now server-monitor.timer   # توقف ارسال گزا
 ├── server-monitor.service   # سرویس systemd از نوع oneshot
 ├── server-monitor.timer     # اجرای سرویس هر ۱۵ دقیقه
 ├── install.sh               # اسکریپت نصب تعاملی
-└── .env.example             # نمونه فایل تنظیمات
+├── .env.example             # نمونه فایل تنظیمات
+└── LICENSE                  # لایسنس MIT
 ```
 
 <div dir="rtl">
@@ -140,6 +144,10 @@ sudo systemctl disable --now server-monitor.timer   # توقف ارسال گزا
 
 - هرگز فایل `.env` واقعی خود را کامیت نکنید؛ این فایل از قبل در `.gitignore` قرار دارد.
 - اگر توکن ربات لو رفت، در BotFather با دستور `/revoke` آن را باطل کنید و توکن جدید را در `/etc/server-monitor.env` قرار دهید.
+
+## لایسنس
+
+این پروژه تحت [لایسنس MIT](LICENSE) منتشر شده است. استفاده، تغییر و انتشار آن آزاد است، به شرطی که متن کپی‌رایت حفظ شود.
 
 ## سازنده
 

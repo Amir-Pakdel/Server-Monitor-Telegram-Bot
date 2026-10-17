@@ -6,6 +6,9 @@
 
 # Server Monitor Telegram Bot
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+![Python 3.6+](https://img.shields.io/badge/python-3.6%2B-blue.svg)
+
 A lightweight Linux server monitor that sends a resource report to **one** Telegram user every 15 minutes.
 
 No dependencies, no daemon, no database: a single Python script using only the standard library, scheduled by a `systemd` timer. It runs for a few seconds, sends the report, and exits, so it uses no memory between runs.
@@ -111,13 +114,18 @@ sudo systemctl disable --now server-monitor.timer   # stop reports
 ├── server-monitor.service   # oneshot systemd service
 ├── server-monitor.timer     # runs the service every 15 minutes
 ├── install.sh               # interactive installer
-└── .env.example             # configuration template
+├── .env.example             # configuration template
+└── LICENSE                  # MIT license
 ```
 
 ## Security
 
 - Never commit your real `.env` file. It's already ignored by `.gitignore`.
 - If your bot token leaks, revoke it in BotFather with `/revoke` and update `/etc/server-monitor.env`.
+
+## License
+
+Released under the [MIT License](LICENSE). You're free to use, modify, and distribute it, as long as the copyright notice is kept.
 
 ## Author
 
